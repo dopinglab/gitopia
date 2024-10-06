@@ -35,10 +35,12 @@ git checkout v4.0.0
 make install
 ```
 
-# Prepare cosmovisor directories
+**Prepare cosmovisor directories**
+```
 mkdir -p $HOME/.gitopia/cosmovisor/genesis/bin
 sudo ln -s $HOME/.gitopia/cosmovisor/genesis $HOME/.gitopia/cosmovisor/current -f
 sudo ln -s $HOME/.gitopia/cosmovisor/current/bin/gitopiad /usr/local/bin/gitopiad -f
+```
 
 # Move binary to cosmovisor directory
 mv $(which gitopiad) $HOME/.gitopia/cosmovisor/genesis/bin
