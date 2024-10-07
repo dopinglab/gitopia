@@ -42,10 +42,12 @@ sudo ln -s $HOME/.gitopia/cosmovisor/genesis $HOME/.gitopia/cosmovisor/current -
 sudo ln -s $HOME/.gitopia/cosmovisor/current/bin/gitopiad /usr/local/bin/gitopiad -f
 ```
 
-# Move binary to cosmovisor directory
+**Move binary to cosmovisor directory**
+```
 mv $(which gitopiad) $HOME/.gitopia/cosmovisor/genesis/bin
+```
 
-# Set node CLI configuration
+**Set node CLI configuration**
 gitopiad config chain-id gitopia
 gitopiad config keyring-backend file
 gitopiad config node tcp://localhost:11357
