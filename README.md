@@ -22,6 +22,7 @@ curl -L https://go.dev/dl/go1.22.7.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.profile
 source .profile
 ```
+
 **Clone project repository**
 ```
 cd && rm -rf gitopia
@@ -73,12 +74,14 @@ sed -i -e 's|^seeds *=.*|seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds
 sed -i -e 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0012ulore"|' $HOME/.gitopia/config/app.toml
 ```
 
-# Set pruning
+**Set pruning**
+```
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "17"|' \
   $HOME/.gitopia/config/app.toml
+```
 
 # Change ports
 sed -i -e "s%:1317%:11317%; s%:8080%:11380%; s%:9090%:11390%; s%:9091%:11391%; s%:8545%:11345%; s%:8546%:11346%; s%:6065%:11365%" $HOME/.gitopia/config/app.toml
